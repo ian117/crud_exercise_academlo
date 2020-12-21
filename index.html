@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./main.css">
+    <title>CRUD CARROS</title>
+</head>
+<body>
+    <h1 class="mt-3 text-aling-center">Academlo´s Dealership</h1>
+
+    <div class="formsButtonsDiv">
+        <button class="btn btn-primary mt-5 mb-5 ml-5 text-center" onclick="toggleHideClass()">Form to add new cars</button>
+        <button class="btn btn-primary mt-5 mb-5 ml-5 text-center" onclick="toggleHideClassForUpdate()">Form to edit cars</button>
+    </div>
+
+    <div class="card hidden" id="hideThis">
+        <h2>Complete the requeriments to add a new car</h2>
+        <div class="card-body">
+
+            <form class="" onsubmit="event.preventDefault(), addCar()" action="/" id="form1">
+                <div class="form-group">
+                    <label for="Brand">Brand</label>
+                    <input type="text" class="form-control" id="Brand" placeholder="Enter Brand" required>
+                    <label for="Model">Model</label>
+                    <input type="text" class="form-control" id="Model" placeholder="Enter Model" required>
+                    <label for="Color">Color</label>
+                    <input type="text" class="form-control" id="Color" placeholder="Enter Color" required>
+                    <label for="Year">Year</label>
+                    <input type="number" class="form-control" id="Year" placeholder="Enter Year" required>
+                    <label for="Price">Price</label>
+                    <input type="number" class="form-control" id="Price" placeholder="Enter Price" required>
+                    <label for="img_Url">Image URL</label>
+                    <input type="text" class="form-control" id="img_Url" placeholder="Enter image URL" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Add</button>
+            </form>
+        </div>
+    </div>
+    <div class="card hidden" id="formToChangeProp">
+        <h2>Fill the fields to update one car</h2>
+        <div class="card-body">
+            <form class="mt-1" onsubmit="event.preventDefault(), changeCarProperty()" action="/" id="form2">
+                <div class="form-group">
+                <input type="number" class="form-control mt-3" id="carId" placeholder="Write the id of the car you want to edit">
+                <input type="text" class="form-control mt-3" id="brandUpdate" placeholder="Write to edit Brand">
+                <input type="text" class="form-control mt-3" id="ModelUpdate" placeholder="Write to edit Model">
+                <input type="text" class="form-control mt-3" id="ColorUpdate" placeholder="Write to edit Color">
+                <input type="number" class="form-control mt-3" id="YearUpdate" placeholder="Write to edit Year">
+                <input type="number" class="form-control mt-3" id="PriceUpdate" placeholder="Write to edit Price">
+                <input type="text" class="form-control mt-3" id="ImageUrlUpdate" placeholder="Write to edit Image URL">
+                <button type="submit" class="btn btn-primary mt-3">Update</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Brand</th>
+                    <th>Model</th>
+                    <th>Color</th>
+                    <th>Year</th>
+                    <th>Price</th>
+                    <th>Image</th>
+                    <th>Options</th>
+                </tr>
+            </thead>
+            <tbody id="container-cars">
+
+            </tbody>
+        </table>
+    </div>
+    
+    <script src="./main.js"></script>
+</body>
+</html>

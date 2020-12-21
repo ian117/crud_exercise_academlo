@@ -1,0 +1,16 @@
+.hidden {
+    display: none;
+}
+
+.min-witdh-btn{
+    min-width: 100px;
+}
+
+.text-aling-center {
+    text-align: center;
+}
+
+.formsButtonsDiv {
+    display: flex;
+    justify-content: space-around;
+}
